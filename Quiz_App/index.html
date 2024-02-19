@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz App Using JavaScript & HTML CSS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="startButton" onclick="startQuiz()">Start Quiz</button>
+    <div class="app" style="display: none;">
+        <h1>Quiz App</h1>
+        <div class="quiz">
+            <div class="quiz-header">
+                <span id="timer">Time: <span id="time">0:00</span></span>
+                <span id="question-counter">Question 1 / 5</span>
+            </div>
+            <div id="resultSection" style="display: none;">
+                <h2>Your Quiz Results</h2>
+                <p class="score">You scored <span id="userScore"></span> out of <span id="totalQuestions"></span>!</p>
+            
+                <div id="incorrectAnswers">
+                    <h3>Your Incorrect Answers</h3>
+                    <ul id="incorrectAnswersList"></ul>
+                </div>
+            </div>
+            <h2 id="question">
+                Question is here
+            </h2>
+            <div id="answerButtons">
+                <label>
+                    <input type="radio" name="answer" value="Answer 1">
+                    Answer 1
+                </label>
+                <label>
+                    <input type="radio" name="answer" value="Answer 2">
+                    Answer 2
+                </label>
+                <label>
+                    <input type="radio" name="answer" value="Answer 3">
+                    Answer 3
+                </label>
+                <label>
+                    <input type="radio" name="answer" value="Answer 4">
+                    Answer 4
+                </label>
+            </div>
+            
+            <button id="resetButton">Reset Answer</button>
+         
+            <button id="nextButton">Next</button>
+
+            <!-- Add this HTML snippet within your existing HTML structure where you display the quiz content -->
+    
+
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <script>
+        function startQuiz() {
+            document.getElementById('startButton').style.display = 'none';
+            document.querySelector('.app').style.display = 'block';
+            // Add logic to start the quiz
+        }
+    </script>
+</body>
+</html>

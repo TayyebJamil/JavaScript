@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Quiz App</title>
+</head>
+<body>
+  <header>
+    <div id="timer">Timer: <span id="time">0:00</span></div>
+    <div id="question-number">Question <span id="current-question">1</span> of 5</div>
+  </header>
+  <div class="quiz-container">
+    <div id="question">Question goes here</div>
+    <div id="choices">
+      <button class="choice" onclick="checkAnswer(this)">Choice 1</button>
+      <button class="choice" onclick="checkAnswer(this)">Choice 2</button>
+      <button class="choice" onclick="checkAnswer(this)">Choice 3</button>
+      <button class="choice" onclick="checkAnswer(this)">Choice 4</button>
+    </div>
+    <button id="next" onclick="nextQuestion()">Next</button>
+  </div>
+  <div id="result"></div>
+  <script src="script.js"></script>
+</body>
+</html>
