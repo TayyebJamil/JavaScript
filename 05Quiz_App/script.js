@@ -1,4 +1,6 @@
+
 "use strict";
+// Array of quiz questions and answers
 const questions = [
     {
         question: "What is the capital of France?",
@@ -51,17 +53,19 @@ const answerButtons = document.getElementById("answerButtons");
 const nextButton = document.getElementById('nextButton');
 const questionNum = document.getElementById("question-counter");
 
-
+// Variables for tracking quiz state
 let currentQuestionIndex = 0;
 let score = 0;
+
+// Function to start the quiz
 function startQuiz() {
-    // nextButton.innerHTML = "Next";
     currentQuestionIndex = 0;
-    score = 0;
-    
+    score = 0; 
     showQuestion();
     resetBtn.style.display = "none";
 }
+
+// Function to display a question
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -83,6 +87,8 @@ function showQuestion() {
     });
     
 }
+
+// Variables for tracking selected answer and correct/incorrect status
 let currentq=[];
 let isCorrect;
 let selectedBtn;
@@ -98,6 +104,8 @@ function selectAns(e){
    
     });
 }
+
+// Event handler for selecting an answer
 function selectAnswer(e) {
      selectedBtn = e.target;
      selectedAnswerValue = selectedBtn.value;
@@ -109,61 +117,26 @@ function selectAnswer(e) {
         selectedBtn.parentNode.classList.add("incorrect");
         currentq.push(currentQuestionIndex);
     }
-      
-    // Remove the event listener from all radio buttons to prevent multiple triggers
-    // Array.from(answerButtons.querySelectorAll('input[type="radio"]')).forEach(radioBtn => {
-    //     radioBtn.removeEventListener("change", selectAnswer);
-    // });
-     
-    // // Disable all other radio buttons once an answer is selected
-    // Array.from(answerButtons.children).forEach(label => {
-    //     const radioBtn = label.firstChild;
-    //     radioBtn.disabled = true;
-
-    // });
-
-    // // Set resetBtn.style.display to true when a radio button is selected
-    // resetBtn.style.display = "block";
+ 
 }
  
-document.getElementById('resetButton').addEventListener('click', function() {
-    // Clear the selected answer by unchecking all radio buttons
-    // var answerInputs = document.getElementsByName('answer');
-    // for (var i = 0; i < answerInputs.length; i++) {
-    //     answerInputs[i].checked = false;
-    //     answerInputs[i].disabled = false; // Enable all radio buttons
-   
-        
-    // }
-    // rstState()
-    //  Clear the isCorrect value
-    // isCorrect = undefined;
-     
+// Event handler for resetting the state
+document.getElementById('resetButton').addEventListener('click', function() {    
     resetState()
     showQuestion();
-    // Hide the reset button again
     resetBtn.style.display = "none";
-    // iCorrect = selectedAnswerValue.dataset.correct === "true";
-    // if(iCorrect){
-    //     score--;
-    // }
+   
 });
-// function rstState() {
-//     nextButton.style.display = "block";
-//     while (answerButtons.firstChild) {
-//         answerButtons.removeChild(answerButtons.firstChild);
-//         score=0;
-//     }
-    
-// }
- 
+
+// Function to reset the state
 function resetState() {
-    // nextButton.style.display = "block";
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
     
 }
+
+// Timer related variables
 let time = 60; // Set initial time to 1 minute (60 seconds)
 const timerElement = document.getElementById('time');
 // const nextButton = document.getElementById('nextButton');
@@ -187,25 +160,19 @@ const timerInterval = setInterval(() => {
     }
 }, 1000);
 function showScore() {
+     // Reset state and clear timer
     resetState();
     clearInterval(timerInterval); // Stop the timer when reset button is clicked
     time = 20; // Reset the timer to 20 seconds
     timerElement.textContent = "0:00";
     resetBtn.style.display = "none";
-    
-    
-    
- 
-    
-  
-
     // Update the user's score and total questions
     document.getElementById('userScore').textContent = score;
     document.getElementById('totalQuestions').textContent = questions.length;
 
     // Update the incorrect answers list
     const incorrectAnswersList = document.getElementById('incorrectAnswersList');
-    incorrectAnswersList.innerHTML = '';
+    incorrectAnswersList.innerHTML = 'Your <strong>incorrect answers</strong> are:';
     questionElement.innerHTML ='';
 
     if (currentq.length >= 0) {
@@ -230,6 +197,7 @@ function showScore() {
     resetState();
 }
  
+// Function to handle the next button click
 function handleNextButton() {
     // Check if any radio button is checked to determine whether to move to the next question
     const anyAnswerSelected = Array.from(document.querySelectorAll('input[name="answer"]')).some(input => input.checked);

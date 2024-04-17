@@ -1,0 +1,62 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+  background-color: #0074CC;
+}
+
+/* Apply a responsive font size */
+body {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+}
+
+/* Container for responsiveness */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 2em;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+      font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hidden-lg {
+      display: block;
+  }
+}

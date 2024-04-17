@@ -3,19 +3,6 @@
 <head>
     <title>Quiz App Using JavaScript & HTML CSS</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #3498db;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-    </style>
 </head>
 <body>
     <button id="startButton" onclick="startQuiz()">Start Quiz</button>
@@ -31,9 +18,12 @@
                 <p class="score">You scored <span id="userScore"></span> out of <span id="totalQuestions"></span>!</p>
             
                 <div id="incorrectAnswers">
-                    <h3>Your Incorrect Answers</h3>
-                    <ul id="incorrectAnswersList"></ul>
+                    
+                    <ul id="incorrectAnswersList">
+                        <h3>Your Incorrect Answers</h3>
+                    </ul>
                 </div>
+                <button id="homeButton" onclick="goToHome()">Home</button>
             </div>
             <h2 id="question">
                 Question is here
@@ -66,13 +56,14 @@
 
         </div>
     </div>
-    <script src="/script.js"></script>
+    <script src="/app.js"></script>
     <script>
         function startQuiz() {
             document.getElementById('startButton').style.display = 'none';
             document.querySelector('.app').style.display = 'block';
             // Add logic to start the quiz
         }
+        
     </script>
 </body>
 </html>
