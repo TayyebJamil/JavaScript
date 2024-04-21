@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Quiz App Using JavaScript & HTML CSS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <button id="startButton" onclick="startQuiz()">Start Quiz</button>
     <div class="app" style="display: none;">
@@ -16,9 +18,9 @@
             <div id="resultSection" style="display: none;">
                 <h2>Your Quiz Results</h2>
                 <p class="score">You scored <span id="userScore"></span> out of <span id="totalQuestions"></span>!</p>
-            
+
                 <div id="incorrectAnswers">
-                    
+
                     <ul id="incorrectAnswersList">
                         <h3>Your Incorrect Answers</h3>
                     </ul>
@@ -46,13 +48,11 @@
                     Answer 4
                 </label>
             </div>
-            
+
             <button id="resetButton">Reset Answer</button>
-         
+
             <button id="nextButton">Next</button>
 
-            <!-- Add this HTML snippet within your existing HTML structure where you display the quiz content -->
-    
 
         </div>
     </div>
@@ -63,7 +63,8 @@
             document.querySelector('.app').style.display = 'block';
             // Add logic to start the quiz
         }
-        
+
     </script>
 </body>
+
 </html>
