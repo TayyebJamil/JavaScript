@@ -1,0 +1,17 @@
+{
+  "name": "javascript-backend",
+  "version": "1.0.0",
+  "description": "Crash Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Tayyeb Jamil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
