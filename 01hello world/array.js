@@ -9,3 +9,4 @@ var arr=[];
  
  console.log(arr) //array length
 //document.write(arr,"array length :",arr.length)
+//add new line for test
